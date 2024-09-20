@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import Navbar from "@/app/(components)/Navbar";
 import Sidebar from "@/app/(components)/Sidebar";
@@ -31,8 +33,10 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 };
 
 const DashboardWrapper = ({ children }: { children: React.ReactNode }) => {
-  <StoreProvider>
-    <DashboardLayout>{children}</DashboardLayout>
-  </StoreProvider>;
+  return (
+    <StoreProvider>
+      <DashboardLayout>{children}</DashboardLayout>
+    </StoreProvider>
+  );
 };
 export default DashboardWrapper;
