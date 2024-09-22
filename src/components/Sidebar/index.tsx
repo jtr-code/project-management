@@ -104,12 +104,12 @@ const Sidebar = () => {
 
         {/* PROJECT LIST */}
         {showProject &&
-          projects?.map((project) => (  
+          projects?.map((project) => (
             <SidebarLink
               key={project.id}
               icon={Briefcase}
               label={project.name}
-              href={`project/${project.id}`}
+              href={`projects/${project.id}`}
             />
           ))}
 
