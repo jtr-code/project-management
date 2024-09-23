@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import ProjectHeader from "@/app/projects/ProjectHeader";
-// import Board from "../BoardView";
+import Board from "../BoardView";
 // import List from "../ListView";
 // import Timeline from "../TimelineView";
 // import Table from "../TableView";
@@ -20,6 +20,9 @@ const Project = ({ params }: Props) => {
   return (
     <div>
       <ProjectHeader activeTab={activeTab} setActiveTab={setActiveTab} />
+      {activeTab === "Board" && (
+        <Board id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
+      )}
     </div>
   );
 };
