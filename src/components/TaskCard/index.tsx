@@ -8,6 +8,7 @@ type TaskCardProps = {
 };
 
 const TaskCard = ({ task }: TaskCardProps) => {
+  console.log("task:inside taskcard ", task);
   return (
     <div className="mb-3 rounded bg-white p-4 shadow dark:bg-dark-secondary dark:text-white">
       {task.attachments && task.attachments.length > 0 && (
