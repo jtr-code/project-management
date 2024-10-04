@@ -46,21 +46,21 @@ const Search = () => {
         {!isLoading && !isError && searchResults && (
           <div>
             {searchResults.tasks && searchResults.tasks?.length > 0 && (
-              <h2>Tasks</h2>
+              <h2 className="py-4 dark:text-white">Tasks</h2>
             )}
             {searchResults.tasks?.map((task) => (
               <TaskCard key={task.id} task={task} />
             ))}
 
             {searchResults.projects && searchResults.projects?.length > 0 && (
-              <h2>Projects</h2>
+              <h2 className="py-4 dark:text-white">Projects</h2>
             )}
             {searchResults.projects?.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
 
             {searchResults.users && searchResults.users?.length > 0 && (
-              <h2>Users</h2>
+              <h2 className="py-4 dark:text-white">Users</h2>
             )}
             {searchResults.users?.map((user) => (
               <UserCard key={user.userId} user={user} />

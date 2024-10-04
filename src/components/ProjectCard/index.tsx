@@ -8,10 +8,10 @@ type Props = {
 const ProjectCard = ({ project }: Props) => {
   return (
     <div className="rounded border p-4 shadow">
-      <h3>{project.name}</h3>
-      <p>{project.description}</p>
-      <p>Start Date: {project.startDate}</p>
-      <p>End Date: {project.endDate}</p>
+      <h3 className="dark:text-white">{project.name}</h3>
+      <p className="dark:text-white" >{project.description}</p>
+      <p className="dark:text-white">Start Date: {project.startDate}</p>
+      <p className="dark:text-white">End Date: {project.endDate}</p>
     </div>
   );
 };
