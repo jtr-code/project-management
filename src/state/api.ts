@@ -74,7 +74,7 @@ export interface SearchResults {
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
   reducerPath: "api",
-  tagTypes: ["Projects", "Tasks", "Users","Teams"],
+  tagTypes: ["Projects", "Tasks", "Users", "Teams"],
   endpoints: (build) => ({
     getProjects: build.query<Project[], void>({
       query: () => "projects",
@@ -99,6 +99,14 @@ export const api = createApi({
               id,
             }))
           : [{ type: "Tasks" as const }],
+    }),
+
+    getTasksByUser: build.query<Task[], number>({
+      query: (userId) => `tasks/user/${userId}`,
+      providesTags: (result, error, userId) =>
+        result
+          ? result.map(({ id }) => ({ type: "Tasks", id }))
+          : [{ type: "Tasks", id: userId }],
     }),
 
     createTasks: build.mutation<Task, Partial<Task>>({
@@ -146,4 +154,5 @@ export const {
   useSearchQuery,
   useGetUsersQuery,
   useGetTeamsQuery,
+  useGetTasksByUserQuery,
 } = api;
