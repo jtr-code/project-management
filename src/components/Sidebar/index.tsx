@@ -2,19 +2,14 @@
 
 import React, { useState } from "react";
 import {
-  AlertCircle,
-  AlertOctagon,
-  AlertTriangle,
   Briefcase,
   ChevronDown,
   ChevronUp,
   Home,
-  Layers3,
   LockIcon,
   LucideIcon,
   Search,
   Settings,
-  ShieldAlert,
   User,
   Users,
   X,
@@ -28,7 +23,6 @@ import { useGetProjectsQuery } from "@/state/api";
 
 const Sidebar = () => {
   const [showProject, setShowProject] = useState(true);
-  const [showPriority, setShowPriority] = useState(true);
 
   const { data: projects } = useGetProjectsQuery();
 
